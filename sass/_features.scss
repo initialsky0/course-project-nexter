@@ -1,16 +1,34 @@
 .features {
    // grid-row: ;
    grid-column: center-start / center-end;
+   padding: 7.5rem 0;
 
-   display: grid;
-   // auto-fit behave like flow, will create new column if width is less than 25rem (to fit)
-   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-   gap: 6rem;
-   justify-items: center;
-   align-items: start;
+   @supports(display: grid) {
+      display: grid;
+      // auto-fit behave like flow, will create new column if width is less than 25rem (to fit)
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 6rem;
+      justify-items: center;
+      align-items: start;
+   }
 }
 
+// EX progressive enhancement -> gradually ,ove to mordern css, 
+// also code older method to support old browsers
+
 .feature {
+
+   // float: left;
+   // width: 33.33333%
+   // margin-bottom: 6rem;
+   
+   // require reset on the bottom
+   
+   // @supports(display: grid) {
+   //    width: auto;
+   //    margin-bottom: 0;
+   // }
+   
 
    display: grid;
    grid-template-columns: min-content 1fr;

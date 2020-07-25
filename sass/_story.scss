@@ -9,6 +9,12 @@
       background-image: linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)), 
          url(../img/back.jpg);
       background-size: cover;
+
+      @media only screen and (max-width: $bp-medium) {
+         grid-column: 1 / -1;
+         padding: 3rem;
+         column-gap: 3rem;
+      }
       
    }
 
@@ -16,6 +22,8 @@
       width: 100%;
       grid-area: 2 / 2 / 6 / 6;
       box-shadow: 0 2rem 5rem rgba(black, .1);
+
+      @media only screen and (max-width: $bp-medium) { grid-area: 1 / 1 / -1 / 5; }
    }
 
    &__img--2 {
@@ -25,6 +33,11 @@
       z-index: 10;
       box-shadow: 0 2rem 5rem rgba(black, .2);
 
+      @media only screen and (max-width: $bp-medium) {
+         width: 100%;
+         height: auto;
+         grid-row: 1 / -1;
+      }
    }
    
    &__content {
@@ -42,6 +55,11 @@
       grid-column: col-start 5 / full-end;
       
       padding: 6rem 7.5vw;
+
+      @media only screen and (max-width: $bp-medium) { 
+         grid-column: 1 / -1;
+         grid-row: 5 / 6;
+      }
 
    }
 
