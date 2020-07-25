@@ -1,0 +1,32 @@
+.features {
+   // grid-row: ;
+   grid-column: center-start / center-end;
+
+   display: grid;
+   // auto-fit behave like flow, will create new column if width is less than 25rem (to fit)
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 6rem;
+   justify-items: center;
+   align-items: start;
+}
+
+.feature {
+
+   display: grid;
+   grid-template-columns: min-content 1fr;
+   row-gap: 1.5rem;
+   column-gap: 2.5rem;
+
+   &__icon {
+      fill: $color-primary;
+      transform: translateY(-1rem);
+      // 1 / -1 -> -1 means end of explicit grid, cannot be used here
+      grid-row: 1 / span 2;
+      width: 4.5rem;
+      height: 4.5rem;
+   }
+
+   &__text {
+      font-size: 1.7rem;
+   }
+}
